@@ -41,7 +41,8 @@ int main(int argc, char* argv[]) {
         // =================================================================
         // TESTE 2: CONSTRUÇÃO DE CIRCUITO QUÂNTICO
         // =================================================================
-        std::cout << "\\n2. Criando circuito quântico (2 qubits):" << std::endl;
+        std::cout << "" << std::endl;
+        std::cout << "2. Criando circuito quântico (2 qubits):" << std::endl;
         
         // Cria circuito para operar em 2 qubits
         QuantumSim::QuantumCircuit circuit(2);
@@ -57,6 +58,7 @@ int main(int argc, char* argv[]) {
         // =================================================================
         // TESTE 3: SIMULAÇÃO PASSO A PASSO
         // =================================================================
+        std::cout << "" << std::endl;
         std::cout << "3. Executando simulação:" << std::endl;
         
         // Cria simulador para 2 qubits
@@ -85,8 +87,9 @@ int main(int argc, char* argv[]) {
         // =================================================================
         // TESTE 4: ANÁLISE DE PROBABILIDADES
         // =================================================================
-        std::cout << "\\n4. Probabilidades dos estados:" << std::endl;
-        
+        std::cout << "" << std::endl;
+        std::cout << "4. Probabilidades dos estados:" << std::endl;
+
         // Obtém mapa de todos os estados com probabilidade > 0
         auto probabilities = simulator.getProbabilities();
         
@@ -97,14 +100,15 @@ int main(int argc, char* argv[]) {
         // =================================================================
         // TESTE 5: VERIFICAÇÃO DE INTEGRIDADE
         // =================================================================
-        std::cout << "\\n5. Estado normalizado: " 
+        std::cout << "" << std::endl;
+        std::cout << "5. Estado normalizado: " 
                   << (simulator.isNormalized() ? "Sim" : "Não") << std::endl;
         
         // A normalização é crucial: soma de todas as probabilidades = 100%
         // Se não estiver normalizado, há bug no simulador
-        
-        std::cout << "\\n=== Núcleo da simulação funcionando corretamente! ===" << std::endl;
-        
+
+        std::cout << "=== Núcleo da simulação funcionando corretamente! ===" << std::endl;
+
     } catch (const std::exception& e) {
         // TRATAMENTO DE ERROS
         // Captura qualquer exceção (erros de validação, índices inválidos, etc.)

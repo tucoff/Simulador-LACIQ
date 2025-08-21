@@ -136,12 +136,12 @@ namespace QuantumSim {
     std::string QuantumCircuit::toString() const {
         std::stringstream ss;
         ss << "Circuito Quântico (" << num_qubits_ << " qubits, " 
-           << gates_.size() << " portas):\\n";
+           << gates_.size() << " portas):";
         
         // Itera por todas as portas em ordem sequencial
         for (size_t i = 0; i < gates_.size(); ++i) {
             const auto& gate = gates_[i];
-            ss << "Porta " << i + 1 << ": ";
+            ss << " Porta " << i + 1 << ": ";
             
             // Formata cada tipo de porta diferentemente
             switch (gate.type) {
@@ -191,7 +191,7 @@ namespace QuantumSim {
                     ss << ")";
                     break;
             }
-            ss << "\\n";
+            ss << ";";
         }
         
         return ss.str();
