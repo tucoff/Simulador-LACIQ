@@ -20,7 +20,7 @@
 #include "core/Simulator.hpp"
 #include "core/QuantumCircuit.hpp"
 
-int main(int argc, char* argv[]) {
+int main() {
     std::cout << "=== Simulador Quântico LACIQ ===" << std::endl;
     std::cout << "Demonstrando o núcleo da simulação\\n" << std::endl;
     
@@ -83,6 +83,14 @@ int main(int argc, char* argv[]) {
         
         // RESULTADO: (|00⟩+|10⟩)/√2 → (|00⟩+|11⟩)/√2 (emaranhamento!)
         std::cout << "   Após CNOT(0,1): " << simulator.stateToString() << std::endl;
+
+        // PASSO 3: Inverte qubit 1 (aplica Pauli-X)
+        QuantumSim::QuantumCircuit x_circuit(2);
+        x_circuit.addPauliX(1);
+        simulator.execute(x_circuit);
+
+        // RESULTADO: (|00⟩+|11⟩)/√2 → (|01⟩+|10⟩)/√2 (inverte qubit 1)
+        std::cout << "   Após X(1): " << simulator.stateToString() << std::endl;
         
         // =================================================================
         // TESTE 4: ANÁLISE DE PROBABILIDADES
